@@ -9,6 +9,6 @@ namespace GameStore.Models
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }
         public virtual Company Company { get; set; }
-        public IEnumerable<Console> Consoles { get; }
+        public IEnumerable<Console> Consoles { get; set; }
     }
 }

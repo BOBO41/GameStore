@@ -4,9 +4,8 @@ namespace GameStore.Repositories
 {
     public interface IGameRepository
     {
-         IEnumerable<Console> Games { get; set; }
-         IEnumerable<Console> GamesOfTheWeek { get; set; }
-
+         IEnumerable<Game> Games { get; }
+         IEnumerable<Game> GamesOfTheWeek { get; }
          Game GetGameById(int gameId);
     }
 }
