@@ -1,0 +1,29 @@
+@model IEnumerable<GameStore.Models.Game>
+
+<h1>Hello From Games</h1>
+<div class="row">
+    @foreach (var game in Model) {
+    <div class="col-md-3 col-lg-2 col-xs-8">
+        <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+                <h3 class="panel-title pull-left">@game.Name</h3>
+                <a class="btn btn-default pull-right" href="#">
+                    <i class="fa fa-check"></i> Button
+                </a>
+            </div>
+            <div class="panel-body">
+                <img class="card-img-top" src="Content\images\placeholder.png" alt="Card image cap">
+                <p>@game.Description</p>
+            </div>
+            <div class="panel-footer">
+                @foreach (var console in Model.Consoles) {
+                <small>
+                    @console.Name
+                </small>
+                }
+            </div>
+        </div>
+    </div>
+    }
+</div>
+

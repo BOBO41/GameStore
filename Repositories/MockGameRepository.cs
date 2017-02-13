@@ -15,6 +15,7 @@ namespace GameStore.Repositories
                         Name = "Final Fantasy XV", 
                         CategoryId = 3,  
                         Company = new Company() {ID = 1, Name = "Square Enix"},
+                        Description = "A open world RPG",
                         Category = new Category() { ID = 3, Name = "RPG" },
                         Consoles = new List<Console>{
                                 new Console{ ID = 1, Name = "Playstation 4" },
@@ -26,6 +27,7 @@ namespace GameStore.Repositories
                         Name = "Wicher 3", 
                         CategoryId = 1,  
                         Company = new Company() {ID = 2, Name = "CD Projekt RED"},
+                        Description = "Magic and Violence",
                         Category = new Category() { ID = 1, Name = "Action" },
                         Consoles = new List<Console>{
                                 new Console{ ID = 1, Name = "Playstation 4" },
@@ -37,6 +39,7 @@ namespace GameStore.Repositories
                         Name = "Battlefield 1", 
                         CategoryId = 2,  
                         Company = new Company() {ID = 1, Name = "Electronic Arts"},
+                        Description = "A masterpiece of shooter games",
                         Category = new Category() { ID = 2, Name = "Shooter" },
                         Consoles = new List<Console>{
                                 new Console{ ID = 1, Name = "Playstation 4" },

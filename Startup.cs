@@ -13,6 +13,7 @@ namespace GameStore
         }
         public void Configure(IApplicationBuilder app) {
             app.UseDeveloperExceptionPage();
+            app.UseMvc();
             app.UseStatusCodePages();
             app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
