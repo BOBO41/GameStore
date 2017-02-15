@@ -12,7 +12,8 @@ namespace GameStore.Repositories
                 return new List<Game> {
                     new Game() { 
                         ID = 1, 
-                        Name = "Final Fantasy XV", 
+                        Name = "Final Fantasy XV",
+                        Price = 199.00, 
                         CategoryId = 3,  
                         Company = new Company() {ID = 1, Name = "Square Enix"},
                         Description = "A open world RPG",
@@ -25,6 +26,7 @@ namespace GameStore.Repositories
                     new Game() { 
                         ID = 2, 
                         Name = "Wicher 3", 
+                        Price = 99.00,
                         CategoryId = 1,  
                         Company = new Company() {ID = 2, Name = "CD Projekt RED"},
                         Description = "Magic and Violence",
@@ -37,6 +39,7 @@ namespace GameStore.Repositories
                     new Game() { 
                         ID = 3, 
                         Name = "Battlefield 1", 
+                        Price = 129.99,
                         CategoryId = 2,  
                         Company = new Company() {ID = 1, Name = "Electronic Arts"},
                         Description = "A masterpiece of shooter games",

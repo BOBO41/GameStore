@@ -3,7 +3,7 @@
 <h1>Hello From Games</h1>
 <div class="row">
     @foreach (var game in Model) {
-    <div class="col-md-4 col-lg-3 col-xs-8">
+    <div class="col-md-4 col-lg-3 col-xs-12">
         <div class="panel panel-default">
             <div class="panel-heading clearfix">
                 <h3 class="panel-title pull-left">@game.Name</h3>
@@ -14,6 +14,7 @@
             <div class="panel-body">
                 <img class="card-img-top" src="\Content\images\placeholder.png" alt="Card image cap">
                 <p>@game.Description</p>
+                <h4 class="pull-right">R$@game.Price.ToString("0.00")</h4>
             </div>
             <div class="panel-footer">
                 <small>
