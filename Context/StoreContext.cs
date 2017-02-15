@@ -7,7 +7,9 @@ namespace GameStore.Context
     {
         public StoreContext(DbContextOptions<StoreContext> options)
         : base(options)
-        { }
+        { 
+            this.Database.EnsureCreated();
+        }
 
         public DbSet<Game> Games { get; set; }
         public DbSet<Category> Categories { get; set; }
