@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GameStore.Repositories
 {
-    public class GameRepositorie : IGameRepository
+    public class GameRepository : IGameRepository
     {
         private readonly StoreContext _storeContext;
 
-        public GameRepositorie(StoreContext storeContext)
+        public GameRepository(StoreContext storeContext)
         {
             _storeContext = storeContext;   
         }
@@ -29,7 +29,7 @@ namespace GameStore.Repositories
 
         public Game GetGameById(int gameId)
         {
-            return _storeContext.Games.FirstOrDefault(_ => _.ID)
+            return _storeContext.Games.FirstOrDefault(_ => _.ID == gameId);
         }
 
 

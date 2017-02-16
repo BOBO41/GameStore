@@ -21,8 +21,8 @@ namespace GameStore
         }
         public void ConfigureServices (IServiceCollection services) {
             services.AddDbContext<StoreContext>(options => options.UseSqlServer(_configurationRoot.GetConnectionString("DefaultConnection")));
-            services.AddTransient<ICategoryRepository, MockCategoryRepositories>();
-            services.AddTransient<IGameRepository, MockGameRepository>();
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<IGameRepository, GameRepository>();
             services.AddMvc();
         }
         public void Configure(IApplicationBuilder app) {
