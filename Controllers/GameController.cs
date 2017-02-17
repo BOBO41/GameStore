@@ -18,5 +18,9 @@ namespace GameStore.Controllers
             return View(_gameRepository.Games);
         }
 
+        public IActionResult Edit (int ID) {
+            return View(_gameRepository.GetGameById(ID));
+        }
+
     }
 }

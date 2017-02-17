@@ -9,9 +9,11 @@ namespace GameStore.Models
         public string Description { get; set; }
         public double Price { get; set; }
         public int CategoryId { get; set; }
+        public int ConsoleId { get; set; }
+        public int CompanyId { get; set; }
         public virtual Category Category { get; set; }
         public virtual Company Company { get; set; }
-        public bool IsGameOfTheWeek { get; set; }
         public IEnumerable<Console> Consoles { get; set; }
+        public bool IsGameOfTheWeek { get; set; }
     }
 }
