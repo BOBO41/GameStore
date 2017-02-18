@@ -1,27 +1,29 @@
 @model GameStore.Models.Game
 
-<form action="">
+<form action="" method="POST">
     <div class="form-group">
         <label for="GameName">Game</label>
-        <input type="text" class="form-control" id="GameName">
+        <input asp-for="Name" class="form-control">
     </div>
     <div class="form-group">
         <label for="DescriptionOfTheGame">Description</label>
-        <textarea class="form-control" id="DescriptionOfTheGame">
+        <textarea asp-for="Description" class="form-control"/>
     </div>
     <div class="form-group">
         <label for="GamePrice">Price</label>
-        <input type="text" class="form-control" id="GamePrice">
+        <input asp-for="Price" class="form-control">
     </div>
     <div class="form-group">
         <label for="ID">Consoles</label>
         <select asp-for="Consoles" 
-                    asp-items="@(new SelectList(Model.Consoles,"ID","Name"))">
+                    asp-items="@(new SelectList(Model.Consoles,"ID","Name"))"/>
         <option>Please select one</option>
     </select>
     </div>
     <div class="form-group">
-        <label for="GameName">Game</label>
-        <input type="text" class="form-control" id="GameName">
+        <label for="Company">Game</label>
+        <select asp-for="Consoles" 
+                    asp-items="@(new SelectList(Model.Company,"ID","Name"))"/>
+        <option>Please select one</option>
     </div>
 </form>

@@ -14,5 +14,6 @@ namespace GameStore.Context
         public DbSet<Game> Games { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Company> Companies { get; set; }
+        public DbSet<Console> Consoles { get; set; }
     }
 }

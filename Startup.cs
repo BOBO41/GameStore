@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using GameStore.Repositories;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using GameStore.Context;
 using Microsoft.EntityFrameworkCore;
+using GameStore.Persistence;
 
 namespace GameStore
 {
@@ -21,8 +21,7 @@ namespace GameStore
         }
         public void ConfigureServices (IServiceCollection services) {
             services.AddDbContext<StoreContext>(options => options.UseSqlServer(_configurationRoot.GetConnectionString("DefaultConnection")));
-            services.AddTransient<ICategoryRepository, CategoryRepository>();
-            services.AddTransient<IGameRepository, GameRepository>();
+            services.AddSingleton<IUnitOfWork, UnitOfWork>();
             services.AddMvc();
         }
         public void Configure(IApplicationBuilder app) {

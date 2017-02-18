@@ -2,9 +2,10 @@ using System.Collections.Generic;
 using System.Linq;
 using GameStore.Context;
 using GameStore.Models;
+using GameStore.Repositories;
 using Microsoft.EntityFrameworkCore;
 
-namespace GameStore.Repositories
+namespace GameStore.Persistence.Repositories
 {
     public class GameRepository : IGameRepository
     {
