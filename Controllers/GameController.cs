@@ -15,15 +15,13 @@ namespace GameStore.Controllers
         public IActionResult Create() {
             CreateGameViewModel viewmodel = new CreateGameViewModel();
             viewmodel.Categories = _unit.categoryRepository.Categories;
-
-            return View();
+            viewmodel.Companies = _unit.companyRepository.Companies;
+            viewmodel.Consoles = _unit.consoleRepository.Consoles;
+            return View(viewmodel);
         }
 
         public IActionResult Edit (int ID) {
             return View(_unit.gameRepository.GetGameById(ID));
         }
-
-
-
     }
 }

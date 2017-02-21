@@ -1,9 +1,11 @@
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace GameStore.Models
 {
     public class Game
     {
+        [Key]
         public int ID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }

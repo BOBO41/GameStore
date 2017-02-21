@@ -1,4 +1,4 @@
-@model GameStore.Models.Game
+@model GameStore.ViewModels.CreateGameViewModel
 
 <form action="" method="POST">
     <div class="form-group">
@@ -15,15 +15,15 @@
     </div>
     <div class="form-group">
         <label for="ID">Consoles</label>
-        <select asp-for="Consoles" 
+        <select asp-for="ConsoleId" 
                     asp-items="@(new SelectList(Model.Consoles,"ID","Name"))"/>
         <option>Please select one</option>
     </select>
     </div>
     <div class="form-group">
-        <label for="Company">Game</label>
-        <select asp-for="Consoles" 
-                    asp-items="@(new SelectList(Model.Company,"ID","Name"))"/>
+        <label for="CompanyId">Game</label>
+        <select asp-for="CompanyId" 
+                    asp-items="@(new SelectList(Model.Companies,"ID","Name"))"/>
         <option>Please select one</option>
     </div>
 </form>
