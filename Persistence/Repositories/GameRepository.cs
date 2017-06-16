@@ -32,7 +32,5 @@ namespace GameStore.Persistence.Repositories
         {
             return _storeContext.Games.FirstOrDefault(_ => _.ID == gameId);
         }
-
-
     }
 }
