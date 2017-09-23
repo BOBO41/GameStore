@@ -1,7 +1,7 @@
 using Application.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebApi.Controllers
+namespace GameStore.WebApi.Controllers
 {
     [Route("api/[controller]")]
     public class GameController: Controller

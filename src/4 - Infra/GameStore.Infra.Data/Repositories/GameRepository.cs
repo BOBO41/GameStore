@@ -1,4 +1,4 @@
-namespace Infra.Data.Repositories
+namespace GameStore.Infra.Data.Repositories
 {
     public class GameRepository
     {
