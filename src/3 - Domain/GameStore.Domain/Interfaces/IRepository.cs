@@ -1,14 +1,15 @@
+using GameStore.Domain.Entities.Common;
 using System;
 using System.Collections.Generic;
 
 namespace GameStore.Domain.Interfaces
 {
-    public interface IRepository<T>: IDisposable where T : class
+    public interface IRepository<T> where T : BaseEntity
     {
         IEnumerable<T> GetAll();
-         T GetById(int id);
-         void Add (T obj);
-         void Update(T obj);
-         void Delete (int id);
+        T GetById(Guid id);
+        void Add(T obj);
+        void Update(T obj);
+        void Remove(T obj);
     }
 }

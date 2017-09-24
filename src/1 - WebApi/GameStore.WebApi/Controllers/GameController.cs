@@ -1,5 +1,6 @@
-using Application.ViewModels;
+using GameStore.Application.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace GameStore.WebApi.Controllers
 {
@@ -8,17 +9,17 @@ namespace GameStore.WebApi.Controllers
     {
         [HttpGet]
         public IActionResult Get () {
-
+            throw new NotImplementedException();
         }
 
         [HttpGet("{id}")]
         public IActionResult Get (int id) {
-
+            throw new NotImplementedException();
         }
 
         [HttpPost]
         public IActionResult Post ([FromBody]GameViewModel game) {
-
+            throw new NotImplementedException();
         }
     }
 }
