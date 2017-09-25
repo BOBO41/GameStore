@@ -1,4 +1,4 @@
-﻿using GameStore.Domain.Interfaces;
+﻿using GameStore.Domain.Interfaces.Repositories;
 using GameStore.Infra.Data.Context;
 using System;
 using System.Collections.Generic;

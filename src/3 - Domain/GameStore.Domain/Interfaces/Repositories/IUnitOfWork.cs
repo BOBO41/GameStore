@@ -1,4 +1,4 @@
-namespace GameStore.Domain.Interfaces
+namespace GameStore.Domain.Interfaces.Repositories
 {
     public interface IUnitOfWork
     {

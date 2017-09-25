@@ -10,7 +10,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using GameStore.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
-using GameStore.Domain.Interfaces;
+using GameStore.Domain.Interfaces.Repositories;
 using GameStore.Infra.Data.Repositories;
 
 namespace GameStore.WebApi

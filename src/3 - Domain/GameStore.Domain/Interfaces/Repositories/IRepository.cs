@@ -2,7 +2,7 @@ using GameStore.Domain.Entities.Common;
 using System;
 using System.Collections.Generic;
 
-namespace GameStore.Domain.Interfaces
+namespace GameStore.Domain.Interfaces.Repositories
 {
     public interface IRepository<T> where T : BaseEntity
     {

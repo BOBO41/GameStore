@@ -1,5 +1,5 @@
 using GameStore.Domain.Entities;
-using GameStore.Domain.Interfaces;
+using GameStore.Domain.Interfaces.Repositories;
 using GameStore.Infra.Data.Context;
 using GameStore.Infra.Data.Repositories.Common;
 using System.Collections.Generic;
