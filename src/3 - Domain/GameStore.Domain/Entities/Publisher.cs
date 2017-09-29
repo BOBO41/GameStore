@@ -10,5 +10,7 @@ namespace GameStore.Domain.Entities
         public string Name { get; private set; }
         public string Country { get; private set; }
         public DateTime FoundedDate { get; private set; }
+
+        public List<Game> PublishedGames { get; private set; }
     }
 }

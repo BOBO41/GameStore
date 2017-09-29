@@ -7,8 +7,10 @@ namespace GameStore.Domain.Entities
 {
     public class Developer: BaseEntity
     {
-        public string Name { get; set; }
-        public DateTime FoundedDate { get; set; }
-        public string Country { get; set; }
+        public string Name { get; private set; }
+        public DateTime FoundedDate { get; private set; }
+        public string Country { get; private set; }
+
+        public List<Game> DevelopedGames { get; private set; }
     }
 }
