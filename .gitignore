@@ -24,6 +24,8 @@ build/
 bld/
 [Bb]in/
 [Oo]bj/
+bin
+obj
 msbuild.log
 msbuild.err
 msbuild.wrn
@@ -31,3 +33,11 @@ msbuild.wrn
 # Visual Studio 2015
 .vs/
 .vscode/
+.Application/bin
+.Application/obj
+.Domain/bin
+.Domain/obj
+.Infra.Data/bin
+.Infra.Data/obj
+.WebApi/bin
+.WebApi/obj
