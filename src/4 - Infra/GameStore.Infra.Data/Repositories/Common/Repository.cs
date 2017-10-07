@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace GameStore.Infra.Data.Repositories.Common
 {
@@ -22,7 +23,15 @@ namespace GameStore.Infra.Data.Repositories.Common
         {
             _db.Set<TEntity>().Add(obj);
         }
+        public async Task<IEnumerable<TEntity>> GetAllAsync()
+        {
+            return await _db.Set<TEntity>().ToListAsync();
+        }
 
+        public async Task<TEntity> GetByIdAsync(Guid id)
+        {
+             return await _db.Set<TEntity>().Where(x => x.Id == id).FirstOrDefaultAsync();
+        }
         public void Remove(TEntity obj)
         {
             _db.Set<TEntity>().Remove(obj);
