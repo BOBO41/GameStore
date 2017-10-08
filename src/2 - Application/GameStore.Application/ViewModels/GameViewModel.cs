@@ -1,15 +1,25 @@
 using System;
+using System.Collections.Generic;
+using GameStore.Domain.Entities;
+using GameStore.Domain.Entities.ReleationshipEntities;
 
 namespace GameStore.Application.ViewModels
 {
     public class GameViewModel
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public DateTime ReleaseDate { get; set; }
-        public int[] ConsolesIds { get; set; }
-        public int[] CategoriesIds { get; set; }
-        public int  CompanyId { get; set; }
+        public int Rating { get; set; }
+        public double Score { get; set; }
+        public string Description { get; set; }
+        public string ShortDescription { get; set; }
+        public string ImageUrl { get; set; }
+
+        public virtual List<GamePlataform> GamePlataforms { get; set; }
+
+        public virtual List<GameGenre> GameGenres { get; set; }
+        public virtual List<GameDeveloper> GameDevelopers { get; set; }
+        public virtual List<GamePublisher> GamePublishers { get; set; }
 
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace GameStore.Domain.Interfaces.Repositories
 {
-    public interface IDeveloperRepository: IRepository<Developer>
+    public interface ICompanyRepository: IRepository<Company>
     {
         
     }

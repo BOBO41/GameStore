@@ -5,9 +5,9 @@ using GameStore.Infra.Data.Repositories.Common;
 
 namespace GameStore.Infra.Data.Repositories
 {
-    public class DeveloperRepository : Repository<Developer>, IDeveloperRepository
+    public class CompanyRepository : Repository<Company>, ICompanyRepository
     {
-        public DeveloperRepository(GameStoreContext db) : base(db)
+        public CompanyRepository(GameStoreContext db) : base(db)
         {
         }
     }

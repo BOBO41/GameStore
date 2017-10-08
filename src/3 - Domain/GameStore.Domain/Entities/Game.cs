@@ -7,23 +7,21 @@ namespace GameStore.Domain.Entities
 {
     public class Game : BaseEntity
     {
-        public string Name { get; private set; }
-        public DateTime ReleaseDate { get; private set; }
-        public int Rating { get; private set; }
-        public long Score { get; private set; }
-        public string Description { get; private set; }
+        public string Name { get; set; }
+        public DateTime ReleaseDate { get; set; }
+        public int Rating { get; set; }
+        public double Score { get; set; }
+        public string Description { get; set; }
+        public string ShortDescription { get; set; }
+        public string ImageUrl { get; set; }
 
-        public virtual List<GamePlataform> GamePlataforms { get; private set; }
+        public virtual List<GamePlataform> GamePlataforms { get; set; }
+        public virtual List<GameGenre> GameGenres { get; set; }
+        public virtual List<GameDeveloper> GameDevelopers { get; set; }
+        public virtual List<GamePublisher> GamePublishers { get; set; }
 
-        public virtual List<GameGenre> GameGenres { get; private set; }
 
-        public Guid DeveloperId { get; private set; }
-        public virtual Developer Developer { get; private set; }
-
-        public Guid PublisherId { get; private set; }
-        public virtual Publisher Publisher { get; private set; }
-
-        public static Game NewInstance(string name, DateTime releaseDate, int rating, long score, string description, List<GamePlataform> plataforms, List<GameGenre> gameGenres, int developerId, Developer developer, int publisherId, Publisher publisher)
+        public static Game NewInstance(string name, DateTime releaseDate, int rating, long score, string description, List<GamePlataform> plataforms, List<GameGenre> gameGenres, int developerId, List<GameDeveloper> gamedevelopers, int publisherId, List<GamePublisher> gamepublishers)
         {
             return new Game()
             {
@@ -34,8 +32,8 @@ namespace GameStore.Domain.Entities
                 Description = description,
                 GamePlataforms = plataforms,
                 GameGenres = gameGenres,
-                Developer = developer,
-                Publisher = publisher,
+                GameDevelopers = gamedevelopers,
+                GamePublishers = gamepublishers,
             };
         }
     }

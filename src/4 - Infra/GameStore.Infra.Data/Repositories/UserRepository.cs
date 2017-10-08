@@ -17,7 +17,7 @@ namespace GameStore.Infra.Data.Repositories
 
         public IEnumerable<User> SearchByName(string search)
         {
-            return _db.User.Where(p => p.Name.Contains(search));
+            return _db.Users.Where(p => p.Name.Contains(search));
         }
     }
 }

@@ -7,10 +7,10 @@ namespace GameStore.Domain.Entities
 {
     public class User: BaseEntity
     {
-        public string Name { get; private set; }
-        public DateTime BirthDate { get; private set; }
-        public IEnumerable<Genre> GenreInterests{ get; private set; }
-        public IEnumerable<Game> WishsList { get; private set; }
+        public string Name { get; set; }
+        public DateTime BirthDate { get; set; }
+        public IEnumerable<Genre> GenreInterests{ get; set; }
+        public IEnumerable<Game> WishsList { get; set; }
 
         public bool IsVipMember()
         {

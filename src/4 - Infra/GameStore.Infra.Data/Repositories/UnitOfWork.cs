@@ -8,27 +8,15 @@ namespace GameStore.Infra.Data.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private IDeveloperRepository _developerRepository;
         private IGameRepository _gameRepository;
+        private ICompanyRepository _companyRepository;
         private IGenreRepository _genreRepository;
         private IPlataformRepository _plataformRepository;
-        private IPublisherRepository _publisherRepository;
         private IUserRepository _userRepository;
 
         private readonly GameStoreContext _db;
         public UnitOfWork(GameStoreContext db) { _db = db; }
 
-        public IDeveloperRepository Developers
-        {
-            get
-            {
-                if (_developerRepository == null)
-                {
-                    _developerRepository = new DeveloperRepository(_db);
-                }
-                return _developerRepository;
-            }
-        }
         public IGameRepository Games
         {
             get
@@ -65,15 +53,15 @@ namespace GameStore.Infra.Data.Repositories
             }
         }
 
-        public IPublisherRepository Publishers
+        public ICompanyRepository Companies
         {
             get
             {
-                if (_publisherRepository == null)
+                if (_companyRepository == null)
                 {
-                    _publisherRepository = new PublisherRepository(_db);
+                    _companyRepository = new CompanyRepository(_db);
                 }
-                return _publisherRepository;
+                return _companyRepository;
             }
         }
 

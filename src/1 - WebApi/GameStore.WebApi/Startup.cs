@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using GameStore.Infra.Data.Context;
-using Microsoft.EntityFrameworkCore;
-using GameStore.Domain.Interfaces.Repositories;
-using GameStore.Infra.Data.Repositories;
 
 namespace GameStore.WebApi
 {
@@ -32,8 +22,6 @@ namespace GameStore.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<GameStoreContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddSingleton<IUnitOfWork, UnitOfWork>();
             services.AddMvc();
         }
         
