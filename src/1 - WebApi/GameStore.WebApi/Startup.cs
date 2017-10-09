@@ -1,7 +1,15 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
+﻿using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
+using GameStore.Infra.Data.Context;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using GameStore.Infra.CrossCutting.IoC;
+using GameStore.Application.Interfaces;
+using GameStore.Application.Services;
+using GameStore.Infra.Data.Repositories;
+using GameStore.Domain.Interfaces.Repositories;
 
 namespace GameStore.WebApi
 {
@@ -23,6 +31,10 @@ namespace GameStore.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddAutoMapper();
+            var sad = Configuration.GetConnectionString("DefaultConnection");
+            services.AddDbContext<GameStoreContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            NativeInjectorBootStrapper.RegisterServices(services);
         }
         
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

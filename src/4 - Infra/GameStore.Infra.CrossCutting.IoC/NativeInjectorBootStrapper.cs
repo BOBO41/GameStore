@@ -9,16 +9,14 @@ using Microsoft.Extensions.Configuration;
 
 namespace GameStore.Infra.CrossCutting.IoC
 {
-    public class NativeInjectorBootStrapper
+    public static class NativeInjectorBootStrapper
     {
-        public IConfigurationRoot Configuration { get; }
-        
-        public void RegisterServices(IServiceCollection services) {
-            
-            services.AddTransient<IGameServices,GameServices>();
-            services.AddTransient<IUnitOfWork,UnitOfWork>();
+        public static void RegisterServices(IServiceCollection services)
+        {
 
-            services.AddDbContext<GameStoreContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddTransient<IGameServices, GameServices>();
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
+
         }
     }
 }
