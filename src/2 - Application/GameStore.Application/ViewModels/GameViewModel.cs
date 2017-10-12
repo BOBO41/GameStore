@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
 using GameStore.Domain.Entities;
 using GameStore.Domain.Entities.ReleationshipEntities;
@@ -7,6 +8,7 @@ namespace GameStore.Application.ViewModels
 {
     public class GameViewModel
     {
+        [Required(ErrorMessage = "Required field")]
         public string Name { get; set; }
         public DateTime ReleaseDate { get; set; }
         public int Rating { get; set; }

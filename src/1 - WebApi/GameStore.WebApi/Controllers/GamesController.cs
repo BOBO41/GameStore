@@ -8,10 +8,10 @@ using System.Collections.Generic;
 namespace GameStore.WebApi.Controllers
 {
     [Route("api/[controller]")]
-    public class GameController : Controller
+    public class GamesController : Controller
     {
         private IGameServices _services;
-        public GameController(IGameServices services)
+        public GamesController(IGameServices services)
         {
             _services = services;
         }
