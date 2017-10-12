@@ -1,3 +1,4 @@
+using AutoMapper;
 using GameStore.Application.Interfaces;
 using GameStore.Application.Services;
 using GameStore.Domain.Interfaces.Repositories;
@@ -9,14 +10,14 @@ using Microsoft.Extensions.Configuration;
 
 namespace GameStore.Infra.CrossCutting.IoC
 {
-    public static class NativeInjectorBootStrapper
+    public class NativeInjectorBootStrapper
     {
         public static void RegisterServices(IServiceCollection services)
         {
-
             services.AddTransient<IGameServices, GameServices>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
-
+            services.AddSingleton(Mapper.Configuration);
+            services.AddScoped<IMapper>(sp => new Mapper(sp.GetRequiredService<AutoMapper.IConfigurationProvider>(), sp.GetService));
         }
     }
 }

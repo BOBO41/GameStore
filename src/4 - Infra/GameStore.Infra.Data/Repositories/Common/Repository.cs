@@ -25,7 +25,7 @@ namespace GameStore.Infra.Data.Repositories.Common
         }
         public async Task<IEnumerable<TEntity>> GetAllAsync()
         {
-            return await _db.Set<TEntity>().ToListAsync();
+            return  await _db.Set<TEntity>().ToListAsync();
         }
 
         public async Task<TEntity> GetByIdAsync(Guid id)

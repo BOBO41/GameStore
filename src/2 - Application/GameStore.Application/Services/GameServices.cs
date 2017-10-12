@@ -14,9 +14,10 @@ namespace GameStore.Application.Services
     {
         private IUnitOfWork _unit;
         private IMapper _mapper;
-        public GameServices(IUnitOfWork unit)
+        public GameServices(IUnitOfWork unit, IMapper mapper)
         {
             _unit = unit;
+            _mapper = mapper;
         }
         public async Task<IEnumerable<GameViewModel>> GetAllGames()
         {

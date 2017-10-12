@@ -11,6 +11,7 @@ namespace GameStore.Domain.Entities
         public DateTime ReleaseDate { get; set; }
         public int Rating { get; set; }
         public double Score { get; set; }
+        public double Price { get; set; }
         public string Description { get; set; }
         public string ShortDescription { get; set; }
         public string ImageUrl { get; set; }

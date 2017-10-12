@@ -33,8 +33,9 @@ namespace GameStore.WebApi
             services.AddMvc();
             services.AddAutoMapper();
             var sad = Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContext<GameStoreContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            NativeInjectorBootStrapper.RegisterServices(services);
+            services.AddDbContext<GameStoreContext>(options => 
+            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            RegisterServices(services);
         }
         
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,6 +44,9 @@ namespace GameStore.WebApi
             app.UseDeveloperExceptionPage();
             app.UseStaticFiles();
             app.UseMvc();
+        }
+        public static void RegisterServices(IServiceCollection services){
+            NativeInjectorBootStrapper.RegisterServices(services);
         }
     }
 }
