@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using GameStore.Infra.Data;
 using GameStore.Infra.Data.Context;
 
-namespace GameStore.WebApi
+namespace GameStore.UI.WebApi
 {
     public class Program
     {

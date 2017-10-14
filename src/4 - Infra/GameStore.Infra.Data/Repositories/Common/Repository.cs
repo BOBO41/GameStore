@@ -19,10 +19,8 @@ namespace GameStore.Infra.Data.Repositories.Common
             _db = db;
         }
 
-        public void Add(TEntity obj)
-        {
-            _db.Set<TEntity>().Add(obj);
-        }
+        public void Add(TEntity obj) => _db.Set<TEntity>().Add(obj);
+        
         public async Task<IEnumerable<TEntity>> GetAllAsync()
         {
             return  await _db.Set<TEntity>().ToListAsync();

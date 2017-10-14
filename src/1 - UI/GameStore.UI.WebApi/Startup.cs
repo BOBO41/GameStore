@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using GameStore.Infra.CrossCutting.IoC;
 
-namespace GameStore.WebApi
+namespace GameStore.UI.WebApi
 {
     public class Startup
     {

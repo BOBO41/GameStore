@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using GameStore.Application.Interfaces;
 using System.Collections.Generic;
 
-namespace GameStore.WebApi.Controllers
+namespace GameStore.UI.WebApi.Controllers
 {
     [Route("api/[controller]")]
     public class GamesController : Controller
