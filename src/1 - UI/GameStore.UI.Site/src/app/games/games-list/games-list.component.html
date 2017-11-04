@@ -1,0 +1,8 @@
+<p> games-list works! </p>
+<div *ngIf="games">
+    <ul *ngFor="let game of games">
+       <li>{{game.name}}</li>
+       <li>{{game.shortDescription}}</li>
+       <li>{{game.score}}</li>
+    </ul>
+</div>

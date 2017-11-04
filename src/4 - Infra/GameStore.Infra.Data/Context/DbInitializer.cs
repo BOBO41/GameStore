@@ -108,7 +108,6 @@ namespace GameStore.Infra.Data.Context
             _gamePlataformsCoL.Add(new GamePlataform() { PlataformId = new Guid("{16df4c17-7f30-4fff-a90e-b379eb720f3f}") });
 
 
-
             var games = new Game[]
             {
                 new Game() { Id = new Guid(), Name = "Final Fantasy XV",
