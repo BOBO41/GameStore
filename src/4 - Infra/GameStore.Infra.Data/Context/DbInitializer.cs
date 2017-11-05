@@ -117,7 +117,7 @@ namespace GameStore.Infra.Data.Context
                 All the world's countries,bar the kingdom of Lucis, are under the dominion of 
                 the empire of Niflheim. Noctis Lucis Caelum, heir to the Lucian throne, goes on
                 a quest to retake his homeland and its magical Crystal ",
-                ReleaseDate = new DateTime(2016,11,9), ImageUrl = @"http://localhost:63376/Images/finalfantasyxv.jpg",
+                ReleaseDate = new DateTime(2016,11,9), ImageUrl = @"http://localhost/gamestore/Images/finalfantasyxv.jpg",
                 GameDevelopers = _gameDevelopersFF,
                 GamePublishers = _gamesPublishedFF,
                 GameGenres = _gameGenresFF,
@@ -130,7 +130,7 @@ namespace GameStore.Infra.Data.Context
                 perspective and its world is navigated on foot or by vehicle. Players control the 
                 three lead protagonists throughout single-player and switch between them both during
                 and outside missions.",
-                ReleaseDate = new DateTime(2013,9,17), ImageUrl =  @"http://localhost:63376/Images/gtav.jpg",
+                ReleaseDate = new DateTime(2013,9,17), ImageUrl =  @"http://localhost/gamestore/Images/gtav.jpg",
                 GameDevelopers = _gameDevelopersGta,
                 GamePublishers = _gamesPublishedGta,
                 GameGenres = _gameGenresGta,
@@ -143,7 +143,7 @@ namespace GameStore.Infra.Data.Context
                 Aurora, a child who wakes up in Lemuria after freezing to death, 
                 must bring back the sun, the moon and the stars held captive 
                 by the Queen of the Night in order to return.",
-                ReleaseDate = new DateTime(2014,4,29), ImageUrl =  @"http://localhost:63376/Images/childoflight.jpg",
+                ReleaseDate = new DateTime(2014,4,29), ImageUrl =  @"http://localhost/gamestore/Images/childoflight.jpg",
                 GameDevelopers = _gameDevelopersCoL,
                 GamePublishers = _gamesPublishedCoL,
                 GameGenres = _gameGenresCoL,

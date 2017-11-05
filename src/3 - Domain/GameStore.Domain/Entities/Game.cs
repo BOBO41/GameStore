@@ -9,7 +9,6 @@ namespace GameStore.Domain.Entities
     {
         public string Name { get; set; }
         public DateTime ReleaseDate { get; set; }
-        public int Rating { get; set; }
         public double Score { get; set; }
         public double Price { get; set; }
         public string Description { get; set; }
@@ -28,7 +27,6 @@ namespace GameStore.Domain.Entities
             {
                 Name = name,
                 ReleaseDate = releaseDate,
-                Rating = rating,
                 Score = score,
                 Description = description,
                 GamePlataforms = plataforms,

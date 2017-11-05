@@ -11,7 +11,6 @@ namespace GameStore.Application.ViewModels
         [Required(ErrorMessage = "Required field")]
         public string Name { get; set; }
         public DateTime ReleaseDate { get; set; }
-        public int Rating { get; set; }
         public double Score { get; set; }
         public string Description { get; set; }
         public string ShortDescription { get; set; }
