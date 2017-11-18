@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2002
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - UI", "1 - UI", "{CCB62F81-BBEA-470C-9836-B8F98CC9BD3C}"
 EndProject
@@ -20,27 +20,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameStore.Infra.CrossCutting.IoC", "src\4 - Infra\GameStore.Infra.CrossCutting.IoC\GameStore.Infra.CrossCutting.IoC.csproj", "{FC68974A-DFFB-483C-BFB4-6602DA41AC34}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameStore.Infra.Data", "src\4 - Infra\GameStore.Infra.Data\GameStore.Infra.Data.csproj", "{8B899B9B-0A23-47FB-BC02-FED1AE0E9F74}"
-EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "GameStore.UI.Site", "src\1 - UI\GameStore.UI.Site\", "{BAC22B33-6F63-433A-B45F-47687554A30D}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_64341"
-		Debug.AspNetCompiler.PhysicalPath = "src\1 - UI\GameStore.UI.Site\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_64341\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_64341"
-		Release.AspNetCompiler.PhysicalPath = "src\1 - UI\GameStore.UI.Site\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_64341\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "64341"
-		SlnRelativePath = "src\1 - UI\GameStore.UI.Site\"
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -112,18 +91,6 @@ Global
 		{8B899B9B-0A23-47FB-BC02-FED1AE0E9F74}.Release|x64.Build.0 = Release|Any CPU
 		{8B899B9B-0A23-47FB-BC02-FED1AE0E9F74}.Release|x86.ActiveCfg = Release|Any CPU
 		{8B899B9B-0A23-47FB-BC02-FED1AE0E9F74}.Release|x86.Build.0 = Release|Any CPU
-		{BAC22B33-6F63-433A-B45F-47687554A30D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BAC22B33-6F63-433A-B45F-47687554A30D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BAC22B33-6F63-433A-B45F-47687554A30D}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{BAC22B33-6F63-433A-B45F-47687554A30D}.Debug|x64.Build.0 = Debug|Any CPU
-		{BAC22B33-6F63-433A-B45F-47687554A30D}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{BAC22B33-6F63-433A-B45F-47687554A30D}.Debug|x86.Build.0 = Debug|Any CPU
-		{BAC22B33-6F63-433A-B45F-47687554A30D}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{BAC22B33-6F63-433A-B45F-47687554A30D}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{BAC22B33-6F63-433A-B45F-47687554A30D}.Release|x64.ActiveCfg = Debug|Any CPU
-		{BAC22B33-6F63-433A-B45F-47687554A30D}.Release|x64.Build.0 = Debug|Any CPU
-		{BAC22B33-6F63-433A-B45F-47687554A30D}.Release|x86.ActiveCfg = Debug|Any CPU
-		{BAC22B33-6F63-433A-B45F-47687554A30D}.Release|x86.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -134,7 +101,6 @@ Global
 		{C3E7C7AF-DF54-4FB2-920E-38FDC6F5C137} = {09F10A9F-3DCD-4150-B91F-16E8D54B4711}
 		{FC68974A-DFFB-483C-BFB4-6602DA41AC34} = {3042072E-A248-4FDA-9160-EDDFF20BE932}
 		{8B899B9B-0A23-47FB-BC02-FED1AE0E9F74} = {3042072E-A248-4FDA-9160-EDDFF20BE932}
-		{BAC22B33-6F63-433A-B45F-47687554A30D} = {CCB62F81-BBEA-470C-9836-B8F98CC9BD3C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DE488307-B831-451E-BD05-4AC8B1095358}

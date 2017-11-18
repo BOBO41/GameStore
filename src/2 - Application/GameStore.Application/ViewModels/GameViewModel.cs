@@ -9,6 +9,7 @@ namespace GameStore.Application.ViewModels
     public class GameViewModel
     {
         [Required(ErrorMessage = "Required field")]
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public DateTime ReleaseDate { get; set; }
         public double Score { get; set; }
