@@ -23,13 +23,14 @@ namespace GameStore.Infra.Data.Repositories
             return _db.Games.Where(p => p.Name.Contains(search));
         }
 
-        public override async Task<IEnumerable<Game>> GetAllAsync()
+        public async Task<IEnumerable<dynamic>> GetAllGamesWithDevelopersAsync()
         {
-            return await _db.Games.Include(x => x.GameDevelopers)
-                .Include(x => x.GameGenres)
-                .Include(x => x.GamePlataforms)
-                .Include(x => x.GamePublishers)
-                .ToListAsync();
+
+            var query = from game in _db.Games
+                        from developer in game.GameDevelopers
+                        select new { game, developer.Developer };
+
+            return await query.ToListAsync();
         }
     }
 }

@@ -16,9 +16,9 @@ namespace GameStore.UI.WebApi.Controllers
             _services = services;
         }
         [HttpGet]
-        public async Task<IEnumerable<GameViewModel>> Get()
+        public async Task<IEnumerable<dynamic>> Get()
         {
-            return await _services.GetAllGames();
+            return await _services.GetAllGamesWithDevelopersAsync();
         }
 
         [HttpGet("{id}")]

@@ -1,14 +1,25 @@
-<p> games-list works! </p>
+<img src="localhost/gamestore/images/gtav.jpg">
+
 <div *ngIf="games">
-    <ul *ngFor="let game of games">
-       <li>{{game.name}}</li>
-       <li>{{game.shortDescription}}</li>
-       <li>{{game.score}}</li>
-    </ul>
+  <mat-card *ngFor="let item of games" class="game-card">
+    <mat-card-header>
+      <div mat-card-avatar class="game-header-image"></div>
+      <mat-card-title>{{item.game.name}}, {{item.game.score}}</mat-card-title>
+      <mat-card-subtitle>{{item.developer.name}}</mat-card-subtitle>
+    </mat-card-header>
+    <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+    <img mat-card-image src="{{item.game.imageUrl}}" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>
+        {{item.game.shortDescription}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button><mat-icon>favorite</mat-icon>LIKE</button>
+      <button mat-button><mat-icon>add_shopping_cart</mat-icon>BUY</button>
+    </mat-card-actions>
+  </mat-card>
+  
 </div>
 
-<h2 class="mdc-typography--display2">Hello, Material Components!</h2>
-<div class="mdc-textfield" data-mdc-auto-init="MDCTextfield">
-  <input type="text" class="mdc-textfield__input" id="demo-input">
-  <label for="demo-input" class="mdc-textfield__label">Tell us how you feel!</label>
-</div>
+
