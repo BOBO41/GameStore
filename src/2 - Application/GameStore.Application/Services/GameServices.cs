@@ -19,6 +19,12 @@ namespace GameStore.Application.Services
             _unit = unit;
             _mapper = mapper;
         }
+
+        public async Task<IEnumerable<dynamic>> GetAllGamesWithDevelopersAsync()
+        {
+            return await _unit.Games.GetAllGamesWithDevelopersAsync();
+        }
+
         public async Task<IEnumerable<GameViewModel>> GetAllGames()
         {
             return _mapper.Map<IEnumerable<GameViewModel>>(await _unit.Games.GetAllAsync());

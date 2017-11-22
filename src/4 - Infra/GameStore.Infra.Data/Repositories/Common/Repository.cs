@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace GameStore.Infra.Data.Repositories.Common
 {
-    public class Repository<TEntity> : IRepository<TEntity>, IDisposable where TEntity : BaseEntity
+    public abstract class Repository<TEntity> : IRepository<TEntity>, IDisposable where TEntity : BaseEntity
     {
         private GameStoreContext _db;
 
@@ -21,7 +21,7 @@ namespace GameStore.Infra.Data.Repositories.Common
 
         public void Add(TEntity obj) => _db.Set<TEntity>().Add(obj);
         
-        public async Task<IEnumerable<TEntity>> GetAllAsync()
+        public async virtual Task<IEnumerable<TEntity>> GetAllAsync()
         {
             return  await _db.Set<TEntity>().ToListAsync();
         }
@@ -35,7 +35,7 @@ namespace GameStore.Infra.Data.Repositories.Common
             _db.Set<TEntity>().Remove(obj);
         }
 
-        public IEnumerable<TEntity> GetAll()
+        public virtual IEnumerable<TEntity> GetAll()
         {
             return _db.Set<TEntity>().ToList();
         }

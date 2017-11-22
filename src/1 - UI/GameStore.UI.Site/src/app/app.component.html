@@ -1,5 +1,11 @@
-<ul>
-  <li><a [routerLink]="['/home']">Home</a></li>
-  <li><a [routerLink]="['/games']">Games</a></li>
-</ul>
+<div>
+  <mat-toolbar color="primary">
+    <span><mat-icon>mood</mat-icon></span>
+    <span>The Perfect Game Store!</span>
+
+    <a [routerLink]="['/home']"><button mat-raised-button>Home</button></a>
+    <a [routerLink]="['/games']"><button mat-raised-button color="accent">Games</button></a>
+
+  </mat-toolbar>
+</div>
 <router-outlet></router-outlet>
