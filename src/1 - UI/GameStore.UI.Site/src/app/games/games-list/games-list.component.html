@@ -1,4 +1,3 @@
-<img src="localhost/gamestore/images/gtav.jpg">
 
 <div *ngIf="games">
   <mat-card *ngFor="let item of games" class="game-card">
@@ -8,7 +7,7 @@
       <mat-card-subtitle>{{item.developer.name}}</mat-card-subtitle>
     </mat-card-header>
     <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
-    <img mat-card-image src="{{item.game.imageUrl}}" alt="Photo of a Shiba Inu">
+    <img mat-card-image src="{{item.game.imageUrl}}">
     <mat-card-content>
       <p>
         {{item.game.shortDescription}}
