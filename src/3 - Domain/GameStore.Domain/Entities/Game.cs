@@ -15,10 +15,10 @@ namespace GameStore.Domain.Entities
         public string ShortDescription { get; set; }
         public string ImageUrl { get; set; }
 
-        public virtual List<GamePlataform> GamePlataforms { get; set; }
-        public virtual List<GameGenre> GameGenres { get; set; }
-        public virtual List<GameDeveloper> GameDevelopers { get; set; }
-        public virtual List<GamePublisher> GamePublishers { get; set; }
+        public ICollection<GamePlataform> GamePlataforms { get; set; }
+        public ICollection<GameGenre> GameGenres { get; set; }
+        public ICollection<GameDeveloper> GameDevelopers { get; set; }
+        public ICollection<GamePublisher> GamePublishers { get; set; }
 
 
         public static Game NewInstance(string name, DateTime releaseDate, int rating, long score, string description, List<GamePlataform> plataforms, List<GameGenre> gameGenres, int developerId, List<GameDeveloper> gamedevelopers, int publisherId, List<GamePublisher> gamepublishers)

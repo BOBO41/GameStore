@@ -13,7 +13,7 @@ namespace GameStore.Infra.Data.Context
 
         public static void Initialize(GameStoreContext context)
         {
-            
+            // context.Database.EnsureDeleted();
             context.Database.EnsureCreated();
             // Look for any games.
             if (context.Games.Any())
@@ -111,12 +111,12 @@ namespace GameStore.Infra.Data.Context
             var games = new Game[]
             {
                 new Game() { Id = new Guid(), Name = "Final Fantasy XV",
-                ShortDescription = @"an open world action role-playing video game developed 
-                and published by Square Enix", Score = 9.8, Price = 89.99,
-                Description = @"Final Fantasy XV takes place on the fictional world of Eos. 
-                All the world's countries,bar the kingdom of Lucis, are under the dominion of 
-                the empire of Niflheim. Noctis Lucis Caelum, heir to the Lucian throne, goes on
-                a quest to retake his homeland and its magical Crystal ",
+                ShortDescription = "an open world action role-playing video game developed "
+                +"and published by Square Enix", Score = 9.8, Price = 89.99,
+                Description = "Final Fantasy XV takes place on the fictional world of Eos. "
+                +"All the world's countries,bar the kingdom of Lucis, are under the dominion of"
+                +"the empire of Niflheim. Noctis Lucis Caelum, heir to the Lucian throne, goes on"
+                +"a quest to retake his homeland and its magical Crystal ",
                 ReleaseDate = new DateTime(2016,11,9), ImageUrl = @"http://localhost/gamestore/images/ffxv.jpg",
                 GameDevelopers = _gameDevelopersFF,
                 GamePublishers = _gamesPublishedFF,
@@ -124,12 +124,12 @@ namespace GameStore.Infra.Data.Context
                 GamePlataforms = _gamePlataformsFF
                 },
                 new Game() { Id = new Guid(), Name = "Grand Theft Auto V",
-                ShortDescription = @"the single-player story follows three criminals and their efforts to commit 
-                heists while under pressure from a government agency.", Score = 10, Price = 59.99,
-                Description = @"The game is played from either a third-person or first-person 
-                perspective and its world is navigated on foot or by vehicle. Players control the 
-                three lead protagonists throughout single-player and switch between them both during
-                and outside missions.",
+                ShortDescription = "the single-player story follows three criminals and their efforts to commit "
+                +"heists while under pressure from a government agency.", Score = 10, Price = 59.99,
+                Description = "The game is played from either a third-person or first-person" 
+                +"perspective and its world is navigated on foot or by vehicle. Players control the "
+                +"three lead protagonists throughout single-player and switch between them both during "
+                +"and outside missions.",
                 ReleaseDate = new DateTime(2013,9,17), ImageUrl =  @"http://localhost/gamestore/images/gtav.jpg",
                 GameDevelopers = _gameDevelopersGta,
                 GamePublishers = _gamesPublishedGta,
@@ -137,12 +137,12 @@ namespace GameStore.Infra.Data.Context
                 GamePlataforms = _gamePlataformsGta
                 },
                 new Game() { Id = new Guid(), Name = "Child of light",
-                ShortDescription = @"Aurora, a young girl from 1895 Austria, 
-                awakens on the lost fairytale", Score = 8.5, Price = 69.99,
-                Description = @"The game's story takes place in the fictional land of Lemuria.
-                Aurora, a child who wakes up in Lemuria after freezing to death, 
-                must bring back the sun, the moon and the stars held captive 
-                by the Queen of the Night in order to return.",
+                ShortDescription = "Aurora, a young girl from 1895 Austria, "
+                +"awakens on the lost fairytale", Score = 8.5, Price = 69.99,
+                Description = "The game's story takes place in the fictional land of Lemuria. "
+                +"Aurora, a child who wakes up in Lemuria after freezing to death, " 
+                +"must bring back the sun, the moon and the stars held captive "
+                +"by the Queen of the Night in order to return.",
                 ReleaseDate = new DateTime(2014,4,29), ImageUrl =  @"http://localhost/gamestore/images/childoflight.jpg",
                 GameDevelopers = _gameDevelopersCoL,
                 GamePublishers = _gamesPublishedCoL,
