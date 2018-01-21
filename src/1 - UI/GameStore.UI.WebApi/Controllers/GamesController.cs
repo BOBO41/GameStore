@@ -22,7 +22,7 @@ namespace GameStore.UI.WebApi.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<GameViewModel> GetAsync(Guid id)
+        public async Task<GameViewModel> Get(Guid id)
         {
             return await _services.GetGameById(id);
         }

@@ -76,13 +76,21 @@ namespace GameStore.Infra.Data.Context
                 if (entry.State == EntityState.Added)
                 {
                     entry.Property("CreatedDate").CurrentValue = DateTime.Now;
-                    entry.Property("Id").CurrentValue = new Guid();
                 }
                 if (entry.State == EntityState.Modified)
                 {
                     entry.Property("CreatedDate").IsModified = false;
                 }
             }
+            // foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("Id") != null))
+            // {
+            //     if (entry.State == EntityState.Added)
+            //     {
+            //         var b = entry.Property("Id").CurrentValue;
+            //         entry.Property("Id").CurrentValue = new Guid();
+            //         var a = entry.Property("Id").CurrentValue;
+            //     }
+            // }
             foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("LastUpdated") != null))
             {
                 entry.Property("LastUpdated").CurrentValue = DateTime.Now;

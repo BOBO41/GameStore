@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using GameStore.Infra.CrossCutting.IoC;
+using GameStore.UI.WebApi.Filters;
 
 namespace GameStore.UI.WebApi
 {
@@ -30,7 +31,9 @@ namespace GameStore.UI.WebApi
             {
                 builder.AllowAnyOrigin();
             }));
-            services.AddMvc();
+            services.AddMvc(options => {
+                options.Filters.Add(new ApiExceptionFilter());
+            });
             services.AddAutoMapper();
             services.AddDbContext<GameStoreContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
