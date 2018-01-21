@@ -37,6 +37,7 @@ namespace GameStore.Infra.Data.Repositories.Common
         public void Remove(TEntity obj)
         {
             _db.Set<TEntity>().Remove(obj);
+            _db.SaveChanges();
         }
 
         public virtual IEnumerable<TEntity> GetAll()
@@ -52,6 +53,7 @@ namespace GameStore.Infra.Data.Repositories.Common
         public void Update(TEntity obj)
         {
             _db.Entry(obj).State = EntityState.Modified;
+            _db.SaveChanges();
         }
 
         #region IDisposable Support
