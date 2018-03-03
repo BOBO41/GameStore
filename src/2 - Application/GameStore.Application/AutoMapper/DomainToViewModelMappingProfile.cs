@@ -8,7 +8,10 @@ namespace GameStore.Application.AutoMapper
     {
         public DomainToViewModelMappingProfile()
         {
+            ShouldMapField = fieldInfo => true;
+            ShouldMapProperty = propertyInfo => true;
             CreateMap<Game,GameViewModel>();
+            CreateMap<Company, CompanyViewModel>();
         }   
     }
 }

@@ -19,20 +19,25 @@ namespace GameStore.Infra.Data.Repositories.Common
             _db = db;
         }
 
-        public void Add(TEntity obj) => _db.Set<TEntity>().Add(obj);
-        
+        public void Add(TEntity obj)
+        {
+            _db.Set<TEntity>().Add(obj);
+            _db.SaveChanges();
+        }
+
         public async virtual Task<IEnumerable<TEntity>> GetAllAsync()
         {
-            return  await _db.Set<TEntity>().ToListAsync();
+            return await _db.Set<TEntity>().ToListAsync();
         }
 
         public async Task<TEntity> GetByIdAsync(Guid id)
         {
-             return await _db.Set<TEntity>().Where(x => x.Id == id).FirstOrDefaultAsync();
+            return await _db.Set<TEntity>().Where(x => x.Id == id).FirstOrDefaultAsync();
         }
         public void Remove(TEntity obj)
         {
             _db.Set<TEntity>().Remove(obj);
+            _db.SaveChanges();
         }
 
         public virtual IEnumerable<TEntity> GetAll()
@@ -48,6 +53,7 @@ namespace GameStore.Infra.Data.Repositories.Common
         public void Update(TEntity obj)
         {
             _db.Entry(obj).State = EntityState.Modified;
+            _db.SaveChanges();
         }
 
         #region IDisposable Support

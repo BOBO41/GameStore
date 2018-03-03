@@ -25,12 +25,20 @@ namespace GameStore.Infra.Data.Repositories
 
         public async Task<IEnumerable<dynamic>> GetAllGamesWithDevelopersAsync()
         {
-
             var query = from game in _db.Games
-                        from developer in game.GameDevelopers
-                        select new { game, developer.Developer };
+                        select new { game };
 
             return await query.ToListAsync();
+        }
+
+        public override async Task<IEnumerable<Game>> GetAllAsync()
+        {
+            var list = await _db.Games
+                      .Include(g => g.GameDevelopers)
+                      .ThenInclude(g => g.Developer)
+                      .ToListAsync();
+
+            return list;
         }
     }
 }
