@@ -7,6 +7,7 @@ using GameStore.Application.ViewModels;
 using GameStore.Domain.Interfaces.Repositories;
 using System.Threading.Tasks;
 using GameStore.Domain.Entities;
+using GameStore.Application.DTOS.Games;
 
 namespace GameStore.Application.Services
 {
@@ -34,11 +35,11 @@ namespace GameStore.Application.Services
         {
             return _mapper.Map<GameViewModel>(await _unit.Games.GetByIdAsync(gameId));
         }
-        public void InsertGame(GameViewModel gamevm)
+        public void InsertGame(AddOrUpdateGameDTO gamevm)
         {
             _unit.Games.Add(_mapper.Map<Game>(gamevm));
         }
-        public void UpdateGame(GameViewModel gamevm)
+        public void UpdateGame(AddOrUpdateGameDTO gamevm)
         {
             _unit.Games.Update(_mapper.Map<Game>(gamevm));
         }

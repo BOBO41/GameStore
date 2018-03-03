@@ -36,6 +36,12 @@ namespace GameStore.Infra.Data.Repositories
             var list = await _db.Games
                       .Include(g => g.GameDevelopers)
                       .ThenInclude(g => g.Developer)
+                      .Include(g => g.GameGenres)
+                      .ThenInclude(g => g.Genre)
+                      .Include(g => g.GamePlataforms)
+                      .ThenInclude(g => g.Plataform)
+                      .Include(g => g.GamePublishers)
+                      .ThenInclude(g => g.Publisher)
                       .ToListAsync();
 
             return list;
