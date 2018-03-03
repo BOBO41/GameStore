@@ -24,49 +24,41 @@ namespace GameStore.Infra.Data.Context
 
             modelBuilder.Entity<GameDeveloper>()
             .HasOne(gg => gg.Game)
-            .WithMany(g => g.GameDevelopers)
-            .HasForeignKey(gg => gg.GameId);
+            .WithMany("GameDevelopers");
 
             modelBuilder.Entity<GameDeveloper>()
                 .HasOne(gg => gg.Developer)
-                .WithMany(g => g.DevelopedGames)
-                .HasForeignKey(gg => gg.DeveloperId);
+                .WithMany("GameDevelopers");
 
             modelBuilder.Entity<GameGenre>().HasKey(t => new { t.GameId, t.GenreId });
 
             modelBuilder.Entity<GameGenre>()
             .HasOne(gg => gg.Game)
-            .WithMany(g => g.GameGenres)
-            .HasForeignKey(gg => gg.GameId);
+            .WithMany("GameGenres");
 
             modelBuilder.Entity<GameGenre>()
                 .HasOne(gg => gg.Genre)
-                .WithMany(g => g.GameGenres)
-                .HasForeignKey(gg => gg.GenreId);
+                .WithMany("GameGenres");
 
-                modelBuilder.Entity<GamePlataform>().HasKey(t => new { t.GameId, t.PlataformId });
+            modelBuilder.Entity<GamePlataform>().HasKey(t => new { t.GameId, t.PlataformId });
 
             modelBuilder.Entity<GamePlataform>()
             .HasOne(gp => gp.Game)
-            .WithMany(g => g.GamePlataforms)
-            .HasForeignKey(gp => gp.GameId);
+            .WithMany("GamePlataforms");
 
             modelBuilder.Entity<GamePlataform>()
                 .HasOne(gp => gp.Plataform)
-                .WithMany(g => g.GamePlataforms)
-                .HasForeignKey(gp => gp.PlataformId);
+                .WithMany("GamePlataforms");
 
-                modelBuilder.Entity<GamePublisher>().HasKey(t => new { t.GameId, t.PublisherId });
+            modelBuilder.Entity<GamePublisher>().HasKey(t => new { t.GameId, t.PublisherId });
 
             modelBuilder.Entity<GamePublisher>()
             .HasOne(gg => gg.Game)
-            .WithMany(g => g.GamePublishers)
-            .HasForeignKey(gg => gg.GameId);
+            .WithMany("GamePublishers");
 
             modelBuilder.Entity<GamePublisher>()
                 .HasOne(gg => gg.Publisher)
-                .WithMany(g => g.PublishedGames)
-                .HasForeignKey(gg => gg.PublisherId);
+                .WithMany("GamePublishers");
         }
 
         public override int SaveChanges()
@@ -82,15 +74,6 @@ namespace GameStore.Infra.Data.Context
                     entry.Property("CreatedDate").IsModified = false;
                 }
             }
-            // foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("Id") != null))
-            // {
-            //     if (entry.State == EntityState.Added)
-            //     {
-            //         var b = entry.Property("Id").CurrentValue;
-            //         entry.Property("Id").CurrentValue = new Guid();
-            //         var a = entry.Property("Id").CurrentValue;
-            //     }
-            // }
             foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("LastUpdated") != null))
             {
                 entry.Property("LastUpdated").CurrentValue = DateTime.Now;

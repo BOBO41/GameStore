@@ -2,6 +2,7 @@
 using GameStore.Domain.Entities.ReleationshipEntities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace GameStore.Domain.Entities
 {
@@ -15,25 +16,11 @@ namespace GameStore.Domain.Entities
         public string ShortDescription { get; set; }
         public string ImageUrl { get; set; }
 
+        public ICollection<Company> Developers { get; set; }     
+
         public ICollection<GamePlataform> GamePlataforms { get; set; }
         public ICollection<GameGenre> GameGenres { get; set; }
         public ICollection<GameDeveloper> GameDevelopers { get; set; }
         public ICollection<GamePublisher> GamePublishers { get; set; }
-
-
-        public static Game NewInstance(string name, DateTime releaseDate, int rating, long score, string description, List<GamePlataform> plataforms, List<GameGenre> gameGenres, int developerId, List<GameDeveloper> gamedevelopers, int publisherId, List<GamePublisher> gamepublishers)
-        {
-            return new Game()
-            {
-                Name = name,
-                ReleaseDate = releaseDate,
-                Score = score,
-                Description = description,
-                GamePlataforms = plataforms,
-                GameGenres = gameGenres,
-                GameDevelopers = gamedevelopers,
-                GamePublishers = gamepublishers,
-            };
-        }
     }
 }
