@@ -1,10 +1,11 @@
 using System;
 
-namespace GameStore.Application.DTOS.Games
+namespace GameStore.Application.DTOS.Developers
 {
-    public class SelectGamePlataformViewModel
+    public class SelectDeveloperGameDTO
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
+
     }
 }

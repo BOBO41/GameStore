@@ -11,6 +11,7 @@ namespace GameStore.Application.AutoMapper
             ShouldMapField = fieldInfo => true;
             ShouldMapProperty = propertyInfo => true;
             CreateMap<Game,GameViewModel>();
+            CreateMap<Company,DeveloperViewModel>();
         }   
     }
 }

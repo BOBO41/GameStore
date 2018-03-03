@@ -14,11 +14,7 @@ namespace GameStore.Domain.Entities
         public DateTime Foundingdate { get; set; }
         public string Country { get; set; }
 
-        private ICollection<GameDeveloper> GameDevelopers { get; } = new List<GameDeveloper>();
-        private ICollection<GamePublisher> GamePublishers { get; } = new List<GamePublisher>();
-        [NotMapped]
-        public IEnumerable<Game> DevelopedGames => GameDevelopers.Select(e => e.Game);
-        [NotMapped]
-        public IEnumerable<Game> PublishedGames => GamePublishers.Select(e => e.Game);
+        public ICollection<GameDeveloper> GameDevelopers { get; set;}
+        public ICollection<GamePublisher> GamePublishers { get; set; }
     }
 }

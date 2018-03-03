@@ -30,7 +30,7 @@ namespace GameStore.Infra.Data.Repositories.Common
             return await _db.Set<TEntity>().ToListAsync();
         }
 
-        public async Task<TEntity> GetByIdAsync(Guid id)
+        public async virtual Task<TEntity> GetByIdAsync(Guid id)
         {
             return await _db.Set<TEntity>().Where(x => x.Id == id).FirstOrDefaultAsync();
         }

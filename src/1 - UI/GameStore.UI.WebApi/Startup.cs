@@ -35,7 +35,7 @@ namespace GameStore.UI.WebApi
             {
                 options.Filters.Add(new ApiExceptionFilter());
             }).AddJsonOptions(
-            options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+            options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore  );
             services.AddAutoMapper();
             services.AddDbContext<GameStoreContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));

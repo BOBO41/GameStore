@@ -16,8 +16,6 @@ namespace GameStore.Domain.Entities
         public string ShortDescription { get; set; }
         public string ImageUrl { get; set; }
 
-        public ICollection<Company> Developers { get; set; }     
-
         public ICollection<GamePlataform> GamePlataforms { get; set; }
         public ICollection<GameGenre> GameGenres { get; set; }
         public ICollection<GameDeveloper> GameDevelopers { get; set; }

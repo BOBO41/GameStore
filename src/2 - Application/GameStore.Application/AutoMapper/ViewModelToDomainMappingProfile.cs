@@ -13,6 +13,7 @@ namespace GameStore.Application.AutoMapper
             ShouldMapProperty = propertyInfo => true;
             CreateMap<GameViewModel, Game>();
             CreateMap<AddOrUpdateGameDTO,Game>();
+            CreateMap<DeveloperViewModel,Company>();
         }
     }
 }
