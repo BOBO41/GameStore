@@ -13,6 +13,6 @@ namespace GameStore.Domain.Interfaces.Repositories
         Task<T> GetByIdAsync(Guid id);
         void Add(T obj);
         void Update(T obj);
-        void Remove(T obj);
+        void Remove(Guid id);
     }
 }

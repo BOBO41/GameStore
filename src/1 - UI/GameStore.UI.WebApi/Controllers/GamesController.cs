@@ -41,9 +41,9 @@ namespace GameStore.UI.WebApi.Controllers
             _services.UpdateGame(game);
         }
         [HttpDelete]
-        public void Delete([FromBody]GameViewModel game)
+        public void Delete(Guid id)
         {
-            _services.DeleteGame(game);
+            _services.DeleteGame(id);
         }
     }
 }

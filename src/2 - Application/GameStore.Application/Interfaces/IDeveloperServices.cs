@@ -12,6 +12,6 @@ namespace GameStore.Application.Interfaces
         Task<DeveloperViewModel> GetDeveloperById(Guid developer);
         void InsertDeveloper(AddOrUpdateDeveloperDTO developer);
         void UpdateDeveloper(AddOrUpdateDeveloperDTO developer);
-        void DeleteDeveloper(DeveloperViewModel developer);
+        void DeleteDeveloper(Guid id);
     }
 }

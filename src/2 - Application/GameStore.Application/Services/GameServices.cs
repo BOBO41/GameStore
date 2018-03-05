@@ -43,9 +43,9 @@ namespace GameStore.Application.Services
         {
             _unit.Games.Update(_mapper.Map<Game>(gamevm));
         }
-        public void DeleteGame(GameViewModel gamevm)
+        public void DeleteGame(Guid id)
         {
-            _unit.Games.Remove(_mapper.Map<Game>(gamevm));
+            _unit.Games.Remove(id);
         }
     }
 }

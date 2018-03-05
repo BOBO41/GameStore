@@ -39,9 +39,9 @@ namespace GameStore.Application.Services
             _unit.Developers.Update(_mapper.Map<Company>(developer));
         }
         
-        public void DeleteDeveloper(DeveloperViewModel developer)
+        public void DeleteDeveloper(Guid id)
         {
-            _unit.Developers.Remove(_mapper.Map<Company>(developer));
+            _unit.Developers.Remove(id);
         }
     }
 }

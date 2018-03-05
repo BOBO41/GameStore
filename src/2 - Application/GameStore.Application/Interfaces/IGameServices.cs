@@ -13,6 +13,6 @@ namespace GameStore.Application.Interfaces
         Task<GameViewModel> GetGameById(Guid game);
         void InsertGame(AddOrUpdateGameDTO game);
         void UpdateGame(AddOrUpdateGameDTO game);
-        void DeleteGame(GameViewModel game);
+        void DeleteGame(Guid id);
     }
 }

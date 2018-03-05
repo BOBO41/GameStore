@@ -34,9 +34,10 @@ namespace GameStore.Infra.Data.Repositories.Common
         {
             return await _db.Set<TEntity>().Where(x => x.Id == id).FirstOrDefaultAsync();
         }
-        public void Remove(TEntity obj)
+        public void Remove(Guid id)
         {
-            _db.Set<TEntity>().Remove(obj);
+            var entity = GetById(id);
+            _db.Set<TEntity>().Remove(entity);
             _db.SaveChanges();
         }
 
