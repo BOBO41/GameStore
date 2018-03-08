@@ -18,11 +18,11 @@ namespace GameStore.Application.DTOS.Games
         public string ShortDescription { get; set; }
         public string ImageUrl { get; set; }
 
-        [Required(ErrorMessage = "Developers(s) required.")]
+        [Required(ErrorMessage = "Developers required.")]
         public ICollection<GameDeveloper> GameDevelopers { get; set; }
-        [Required(ErrorMessage = "Plataform(s) required.")]
+        [Required(ErrorMessage = "Plataforms required.")]
         public ICollection<GamePlataform> GamePlataforms { get; set; }
-        [Required(ErrorMessage = "Genre(s) required.")]
+        [Required(ErrorMessage = "Genres required.")]
         public ICollection<GameGenre> GameGenres { get; set; }
         public ICollection<GamePublisher> GamePublishers { get; set; }
     }
