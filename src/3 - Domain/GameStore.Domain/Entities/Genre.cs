@@ -10,8 +10,6 @@ namespace GameStore.Domain.Entities
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        private ICollection<GameGenre> GameGenres { get; } = new List<GameGenre>();
-        [NotMapped]
-        public IEnumerable<Game> GamesOfThisGenre => GameGenres.Select(e => e.Game);
+        public ICollection<GameGenre> GameGenres { get; set; }
     }
 }
