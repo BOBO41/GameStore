@@ -24,66 +24,53 @@ namespace GameStore.Application.ViewModels
         private ICollection<GameGenre> GameGenres { get; set; }
         private ICollection<GamePublisher> GamePublishers { get; set; }
 
-        private IEnumerable<SelectGameDeveloperPublisherDTO> _developers { get; set; }
-        public IEnumerable<SelectGameDeveloperPublisherDTO> Developers
+        public IEnumerable<dynamic> Developers
         {
             get
             {
-                if (GameDevelopers != null)
-                    return GameDevelopers.Select(e => new SelectGameDeveloperPublisherDTO{
-                        Id = e.Developer.Id,
-                        Name = e.Developer.Name,
-                        Foundingdate = e.Developer.Foundingdate,
-                        Country = e.Developer.Country   
-                    });
-                else
-                    return _developers;
+                return GameDevelopers.Select(e => new
+                {
+                    Id = e.Developer.Id,
+                    Name = e.Developer.Name,
+                    Foundingdate = e.Developer.Foundingdate,
+                    Country = e.Developer.Country
+                });
             }
         }
-        private IEnumerable<SelectGameGenreDTO> _genre { get; set; }
-        public IEnumerable<SelectGameGenreDTO> Genres
+        public IEnumerable<dynamic> Genres
         {
             get
             {
-                if (GameGenres != null)
-                    return GameGenres.Select(e => new SelectGameGenreDTO {
-                        Id = e.Genre.Id,
-                        Name = e.Genre.Name,
-                        Description = e.Genre.Description
-                    });
-                else
-                    return _genre;
+                return GameGenres.Select(e => new
+                {
+                    Id = e.Genre.Id,
+                    Name = e.Genre.Name,
+                    Description = e.Genre.Description
+                });
             }
         }
-        private IEnumerable<SelectGameDeveloperPublisherDTO> _publishers;
-        public IEnumerable<SelectGameDeveloperPublisherDTO> Publishers
+        public IEnumerable<dynamic> Publishers
         {
             get
             {
-                if (GamePublishers != null)
-                    return GamePublishers.Select(e => new SelectGameDeveloperPublisherDTO{
-                        Id = e.Publisher.Id,
-                        Name = e.Publisher.Name,
-                        Foundingdate = e.Publisher.Foundingdate,
-                        Country = e.Publisher.Country
-                    });
-                else
-                    return _publishers;
+                return GamePublishers.Select(e => new
+                {
+                    Id = e.Publisher.Id,
+                    Name = e.Publisher.Name,
+                    Foundingdate = e.Publisher.Foundingdate,
+                    Country = e.Publisher.Country
+                });
             }
-
         }
-        private IEnumerable<SelectGamePlataformDTO> _plataforms { get; set; }
-        public IEnumerable<SelectGamePlataformDTO> Plataforms
+        public IEnumerable<dynamic> Plataforms
         {
             get
             {
-                if (GamePlataforms != null)
-                    return GamePlataforms.Select(e => new SelectGamePlataformDTO {
-                        Id = e.Plataform.Id,
-                        Name = e.Plataform.Name
-                    });
-                else
-                    return _plataforms;
+                return GamePlataforms.Select(e => new
+                {
+                    Id = e.Plataform.Id,
+                    Name = e.Plataform.Name
+                });
             }
         }
     }
