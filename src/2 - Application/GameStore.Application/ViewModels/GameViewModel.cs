@@ -32,7 +32,7 @@ namespace GameStore.Application.ViewModels
                 {
                     Id = e.Developer.Id,
                     Name = e.Developer.Name,
-                    Foundingdate = e.Developer.Foundingdate,
+                    Foundingdate = e.Developer.Founded,
                     Country = e.Developer.Country
                 });
             }
@@ -57,7 +57,7 @@ namespace GameStore.Application.ViewModels
                 {
                     Id = e.Publisher.Id,
                     Name = e.Publisher.Name,
-                    Foundingdate = e.Publisher.Foundingdate,
+                    Foundingdate = e.Publisher.Founded,
                     Country = e.Publisher.Country
                 });
             }

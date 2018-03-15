@@ -11,7 +11,7 @@ namespace GameStore.Domain.Entities
     public class Company: BaseEntity
     {
         public string Name { get; set; }
-        public DateTime Foundingdate { get; set; }
+        public DateTime Founded { get; set; }
         public string Country { get; set; }
 
         public ICollection<GameDeveloper> GameDevelopers { get; set;}

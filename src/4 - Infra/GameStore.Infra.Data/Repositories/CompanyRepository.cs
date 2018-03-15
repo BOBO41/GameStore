@@ -11,10 +11,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GameStore.Infra.Data.Repositories
 {
-    public class DeveloperRepository : Repository<Company>, IDeveloperRepository
+    public class ComapanyRepository : Repository<Company>, ICompanyRepository
     {
         private GameStoreContext _db;
-        public DeveloperRepository(GameStoreContext db) : base(db)
+        public ComapanyRepository(GameStoreContext db) : base(db)
         {
             _db = db;
         }
@@ -23,6 +23,8 @@ namespace GameStore.Infra.Data.Repositories
         {
             return await _db.Companies
                       .Include(_ => _.GameDevelopers)
+                      .ThenInclude(_ => _.Game)
+                      .Include(_ => _.GamePublishers)
                       .ThenInclude(_ => _.Game)
                       .ToListAsync();
         }
