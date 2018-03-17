@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using GameStore.Domain.Entities;
 using GameStore.Domain.Entities.ReleationshipEntities;
 using System.Linq;
+using System.Runtime.Serialization;
+using GameStore.Application.DTOS.Games;
 
 namespace GameStore.Application.ViewModels
 {
     public class GameViewModel
     {
-        [Required(ErrorMessage = "Required field")]
         public Guid Id { get; set; }
         public string Name { get; set; }
         public DateTime ReleaseDate { get; set; }
@@ -18,59 +19,59 @@ namespace GameStore.Application.ViewModels
         public string ShortDescription { get; set; }
         public string ImageUrl { get; set; }
 
-
-        [Required(ErrorMessage = "Developer(s) required")]
         private ICollection<GameDeveloper> GameDevelopers { get; set; }
         private ICollection<GamePlataform> GamePlataforms { get; set; }
         private ICollection<GameGenre> GameGenres { get; set; }
         private ICollection<GamePublisher> GamePublishers { get; set; }
 
-        private IEnumerable<Company> _developers { get; set; }
-        public IEnumerable<Company> Developers
+        public IEnumerable<dynamic> Developers
         {
             get
             {
-                if (GameDevelopers != null)
-                    return GameDevelopers.Select(e => e.Developer);
-                else
-                    return _developers;
+                return GameDevelopers.Select(e => new
+                {
+                    Id = e.Developer.Id,
+                    Name = e.Developer.Name,
+                    Foundingdate = e.Developer.Founded,
+                    Country = e.Developer.Country
+                });
             }
         }
-        private IEnumerable<Genre> _genre { get; set; }
-        public IEnumerable<Genre> Genres
+        public IEnumerable<dynamic> Genres
         {
             get
             {
-                if (GameGenres != null)
-                    return GameGenres.Select(e => e.Genre);
-                else
-                    return _genre;
+                return GameGenres.Select(e => new
+                {
+                    Id = e.Genre.Id,
+                    Name = e.Genre.Name,
+                    Description = e.Genre.Description
+                });
             }
         }
-        private IEnumerable<Company> _publishers;
-        public IEnumerable<Company> Publishers
+        public IEnumerable<dynamic> Publishers
         {
             get
             {
-                if (GamePublishers != null)
-                    return GamePublishers.Select(e => e.Publisher);
-                else
-                    return _publishers;
+                return GamePublishers.Select(e => new
+                {
+                    Id = e.Publisher.Id,
+                    Name = e.Publisher.Name,
+                    Foundingdate = e.Publisher.Founded,
+                    Country = e.Publisher.Country
+                });
             }
-
         }
-        private IEnumerable<Plataform> _plataforms { get; set; }
-        public IEnumerable<Plataform> Plataforms
+        public IEnumerable<dynamic> Plataforms
         {
             get
             {
-                if (GamePlataforms != null)
-                    return GamePlataforms.Select(e => e.Plataform);
-                else
-                    return _plataforms;
+                return GamePlataforms.Select(e => new
+                {
+                    Id = e.Plataform.Id,
+                    Name = e.Plataform.Name
+                });
             }
-
         }
-
     }
 }

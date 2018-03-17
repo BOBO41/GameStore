@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using GameStore.Application.Interfaces;
 using System.Collections.Generic;
 using GameStore.UI.WebApi.Filters;
+using GameStore.Application.DTOS.Games;
 
 namespace GameStore.UI.WebApi.Controllers
 {
@@ -20,8 +21,7 @@ namespace GameStore.UI.WebApi.Controllers
         [HttpGet]
         public async Task<IEnumerable<GameViewModel>> Get()
         {
-            var vm = await _services.GetAllGames();
-            return vm;
+            return await _services.GetAllGames();
         }
 
         [HttpGet("{id}")]
@@ -31,19 +31,19 @@ namespace GameStore.UI.WebApi.Controllers
         }
 
         [HttpPost]
-        public void Post([FromBody]GameViewModel game)
+        public void Post([FromBody]AddOrUpdateGameDTO game)
         {
             _services.InsertGame(game);
         }
         [HttpPut]
-        public void Update([FromBody]GameViewModel game)
+        public void Update([FromBody]AddOrUpdateGameDTO game)
         {
             _services.UpdateGame(game);
         }
-        [HttpDelete]
-        public void Delete([FromBody]GameViewModel game)
+        [HttpDelete("{id}")]
+        public void Delete(Guid id)
         {
-            _services.DeleteGame(game);
+            _services.DeleteGame(id);
         }
     }
 }

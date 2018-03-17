@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System;
 
 namespace GameStore.Infra.Data.Repositories
 {
@@ -33,12 +34,31 @@ namespace GameStore.Infra.Data.Repositories
 
         public override async Task<IEnumerable<Game>> GetAllAsync()
         {
-            var list = await _db.Games
-                      .Include(g => g.GameDevelopers)
-                      .ThenInclude(g => g.Developer)
+            return await _db.Games
+                      .Include(_ => _.GameDevelopers)
+                      .ThenInclude(_ => _.Developer)
+                      .Include(_ => _.GameGenres)
+                      .ThenInclude(_ => _.Genre)
+                      .Include(_ => _.GamePlataforms)
+                      .ThenInclude(_ => _.Plataform)
+                      .Include(_ => _.GamePublishers)
+                      .ThenInclude(_ => _.Publisher)
                       .ToListAsync();
+        }
 
-            return list;
+        public override async Task<Game> GetByIdAsync(Guid id)
+        {
+            return await _db.Games
+                      .Include(_ => _.GameDevelopers)
+                      .ThenInclude(_ => _.Developer)
+                      .Include(_ => _.GameGenres)
+                      .ThenInclude(_ => _.Genre)
+                      .Include(_ => _.GamePlataforms)
+                      .ThenInclude(_ => _.Plataform)
+                      .Include(_ => _.GamePublishers)
+                      .ThenInclude(_ => _.Publisher)
+                      .Where(_ => _.Id == id)
+                      .FirstOrDefaultAsync();
         }
     }
 }

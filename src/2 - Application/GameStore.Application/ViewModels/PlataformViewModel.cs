@@ -7,18 +7,17 @@ using GameStore.Domain.Entities.ReleationshipEntities;
 
 namespace GameStore.Application.ViewModels
 {
-    public class GenreViewModel
+    public class PlataformViewModel
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
-        public string Description { get; set; }
-        private ICollection<GameGenre> GameGenres { get; set; }
+        private ICollection<GamePlataform> GamePlataforms { get; set; }
 
-        public IEnumerable<dynamic> GamesOfThisGenre
+        public IEnumerable<dynamic> GamesOfThisPlataform
         {
             get
             {
-                return GameGenres.Select(e => new
+                return GamePlataforms.Select(e => new
                 {
                     Id = e.Game.Id,
                     Name = e.Game.Name,

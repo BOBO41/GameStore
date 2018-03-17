@@ -29,6 +29,18 @@ namespace GameStore.Infra.Data.Repositories
             }
         }
 
+        public ICompanyRepository Companies
+        {
+            get
+            {
+                if (_companyRepository == null)
+                {
+                    _companyRepository = new ComapanyRepository(_db);
+                }
+                return _companyRepository;
+            }
+        }
+
         public IGenreRepository Genres
         {
             get
@@ -50,18 +62,6 @@ namespace GameStore.Infra.Data.Repositories
                     _plataformRepository = new PlataformRepository(_db);
                 }
                 return _plataformRepository;
-            }
-        }
-
-        public ICompanyRepository Companies
-        {
-            get
-            {
-                if (_companyRepository == null)
-                {
-                    _companyRepository = new CompanyRepository(_db);
-                }
-                return _companyRepository;
             }
         }
 
