@@ -1,6 +1,6 @@
 # Game Store
 
-This project aim be a perfect game store. It is dived in 2 applications, an web api developed in ASP.NET Core 2.0 and a website utilizing Angular 4+. 
+This project aim to be a perfect game store. It is dived in 2 applications, an web api developed in ASP.NET Core 2.0 and a website utilizing Angular 4+. 
 
 ### Prerequisites
 
@@ -27,7 +27,7 @@ dotnet run
 
 #### UI
 
-Install npm packages required and urn
+Install npm packages required and run
 
 ```
 cd GameStore.UI.Site
