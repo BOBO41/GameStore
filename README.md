@@ -35,6 +35,16 @@ npm install
 ng serve
 ```
 
+### Documentation
+
+See the api documentation using swagger calling
+
+```
+localhost:<random-port>/swagger
+```
+
+You can also import the GameStore.postman_collection.json on Postman to see detailed information and examples
+
 ## Technologies implemented:
 
 - ASP.NET Core 2.0
