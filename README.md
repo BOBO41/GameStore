@@ -1,6 +1,6 @@
 # Game Store
 
-This project aim to be a perfect game store. It is dived in 2 applications, an web api developed in ASP.NET Core 2.0 and a website utilizing Angular 4+. 
+This project aims to be a perfect game store. It is dived in 2 applications, a web API developed in ASP.NET Core 2.0 and a website using Angular 4+. 
 
 ### Prerequisites
 
@@ -9,15 +9,15 @@ This project aim to be a perfect game store. It is dived in 2 applications, an w
 - Read the .NET Core 2.0 [release announcement](https://blogs.msdn.microsoft.com/dotnet/2017/08/14/announcing-net-core-2-0/) for more information.
 - the latest Node.js installer could be found [here](https://nodejs.org/en/)
 
-Also you can run the application in Visual Studio Code (Windows, Linux or MacOS).
+Also, you can run the application in Visual Studio Code (Windows, Linux or MacOS).
 
-To know more about how to setup your enviroment visit the [Microsoft .NET Download Guide](https://www.microsoft.com/net/download)
+To know more about how to setup your environment visit the [Microsoft .NET Download Guide](https://www.microsoft.com/net/download)
 
 ### Installing
 
 #### API
 
-Install nuget packages required and run
+Install NuGet packages required and run
 
 ```
 cd GameStore.UI.WebApi
@@ -37,7 +37,7 @@ ng serve
 
 ### Documentation
 
-See the api documentation using swagger calling
+See the API documentation using swagger calling
 
 ```
 localhost:<random-port>/swagger
@@ -63,4 +63,3 @@ You can also import the GameStore.postman_collection.json on Postman to see deta
 ## Acknowledgments
 
 Inspired by the [Equinox Project](https://github.com/EduardoPires/EquinoxProject) from [Eduardo Pires](http://www.eduardopires.net.br/)
-
