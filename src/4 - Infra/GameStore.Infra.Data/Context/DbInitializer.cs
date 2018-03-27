@@ -21,6 +21,17 @@ namespace GameStore.Infra.Data.Context
                 return;   // DB has been seeded
             }
 
+            var users = new User[]
+            {
+                new User() { UserId = "Admin", AccessKey = "Admin" },
+                new User() { UserId = "RandomCustomer", AccessKey = "123456" }
+            };
+
+            foreach (User s in users)
+            {
+                context.Users.Add(s);
+            }
+
             var companies = new Company[]
             {
                 new Company() { Id = new Guid("{3a332845-6a75-48f9-b7bf-5427570f8d9a}"),
