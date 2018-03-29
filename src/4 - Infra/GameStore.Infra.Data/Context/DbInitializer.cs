@@ -111,7 +111,7 @@ namespace GameStore.Infra.Data.Context
                 +"All the world's countries,bar the kingdom of Lucis, are under the dominion of"
                 +"the empire of Niflheim. Noctis Lucis Caelum, heir to the Lucian throne, goes on"
                 +"a quest to retake his homeland and its magical Crystal ",
-                ReleaseDate = new DateTime(2016,11,9), ImageUrl = @"http://localhost/gamestore/images/ffxv.jpg"
+                ReleaseDate = new DateTime(2016,11,9), ImageUrl = $"http://{Configuration["BaseUrl"]}/images/ffxv.jpg"
                 },
                 new Game() { Id = new Guid(), Name = "Grand Theft Auto V",
                 ShortDescription = "the single-player story follows three criminals and their efforts to commit "
@@ -120,7 +120,7 @@ namespace GameStore.Infra.Data.Context
                 +"perspective and its world is navigated on foot or by vehicle. Players control the "
                 +"three lead protagonists throughout single-player and switch between them both during "
                 +"and outside missions.",
-                ReleaseDate = new DateTime(2013,9,17), ImageUrl =  @"http://localhost/gamestore/images/gtav.jpg"
+                ReleaseDate = new DateTime(2013,9,17), ImageUrl =  $"http://{Configuration["BaseUrl"]}/images/gtav.jpg"
                 },
                 new Game() { Id = new Guid(), Name = "Child of light",
                 ShortDescription = "Aurora, a young girl from 1895 Austria, "
@@ -129,7 +129,7 @@ namespace GameStore.Infra.Data.Context
                 +"Aurora, a child who wakes up in Lemuria after freezing to death, " 
                 +"must bring back the sun, the moon and the stars held captive "
                 +"by the Queen of the Night in order to return.",
-                ReleaseDate = new DateTime(2014,4,29), ImageUrl =  @"http://localhost/gamestore/images/childoflight.jpg"
+                ReleaseDate = new DateTime(2014,4,29), ImageUrl =  $"http://{Configuration["BaseUrl"]}/images/childoflight.jpg"
                 },
                 new Game() { Id = new Guid(), Name = "The Legend of Zelda: Breath of the Wild",
                 ShortDescription = "The Legend of Zelda: Breath of the Wild was very highly received. "
@@ -138,7 +138,7 @@ namespace GameStore.Infra.Data.Context
                 +"main installment of The Legend of Zelda series. It was " 
                 +"released simultaneously worldwide for the Wii U and "
                 +"Nintendo Switch on March 3, 2017.",
-                ReleaseDate = new DateTime(2014,4,29), ImageUrl =  @"http://localhost/gamestore/images/childoflight.jpg"
+                ReleaseDate = new DateTime(2014,4,29), ImageUrl =  $"http://{Configuration["BaseUrl"]}/images/childoflight.jpg"
                 }
             };
             foreach (Game s in games)
