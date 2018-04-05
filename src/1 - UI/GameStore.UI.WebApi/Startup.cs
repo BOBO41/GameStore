@@ -47,6 +47,8 @@ namespace GameStore.UI.WebApi
                 .AddEntityFrameworkStores<GameStoreContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddSingleton<IConfiguration>(Configuration);
+
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear(); // => remove default claims
             services
                 .AddAuthentication(options =>

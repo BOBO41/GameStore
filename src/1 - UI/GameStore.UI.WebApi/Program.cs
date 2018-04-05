@@ -26,7 +26,8 @@ namespace GameStore.UI.WebApi
                 try
                 {
                     var context = services.GetRequiredService<GameStoreContext>();
-                    DbInitializer.Initialize(context);
+                    var configuration = services.GetRequiredService<IConfiguration>();
+                    DbInitializer.Initialize(context, configuration);
                 }
                 catch (Exception ex)
                 {
