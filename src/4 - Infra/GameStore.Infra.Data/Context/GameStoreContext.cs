@@ -2,11 +2,12 @@
 using System.Linq;
 using GameStore.Domain.Entities;
 using GameStore.Domain.Entities.ReleationshipEntities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace GameStore.Infra.Data.Context
 {
-    public class GameStoreContext : DbContext
+    public class GameStoreContext : IdentityDbContext
     {
 
         public GameStoreContext(DbContextOptions<GameStoreContext> options)
@@ -16,7 +17,6 @@ namespace GameStore.Infra.Data.Context
         public DbSet<Game> Games { get; set; }
         public DbSet<Genre> Genres { get; set; }
         public DbSet<Plataform> Plataforms { get; set; }
-        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -59,6 +59,8 @@ namespace GameStore.Infra.Data.Context
             modelBuilder.Entity<GamePublisher>()
                 .HasOne(gg => gg.Publisher)
                 .WithMany("GamePublishers");
+
+            base.OnModelCreating(modelBuilder);
         }
 
         public override int SaveChanges()

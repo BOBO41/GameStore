@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using GameStore.Domain.Entities;
 using GameStore.Domain.Entities.ReleationshipEntities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 
 namespace GameStore.Infra.Data.Context
@@ -19,16 +20,16 @@ namespace GameStore.Infra.Data.Context
                 return;   // DB has been seeded
             }
 
-            var users = new User[]
-            {
-                new User() { UserId = "Admin", AccessKey = "Admin" },
-                new User() { UserId = "RandomCustomer", AccessKey = "123456" }
-            };
+            //var users = new IdentityUser[]
+            //{
+            //    new IdentityUser() { UserName = "Admin",   0= "Admin" },
+            //    new IdentityUser() { UserName = "RandomCustomer", AccessKey = "123456" }
+            //};
 
-            foreach (User s in users)
-            {
-                context.Users.Add(s);
-            }
+            //foreach (User s in users)
+            //{
+            //    context.Users.Add(s);
+            //}
 
             var companies = new Company[]
             {
